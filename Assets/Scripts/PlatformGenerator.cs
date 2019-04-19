@@ -3,23 +3,47 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Random = System.Random;
 
 public class PlatformGenerator : MonoBehaviour
 {
     
-    public Queue<GameObject> PrefabsQueue = new Queue<GameObject>(3);
-    public List<GameObject> Prefabs = new List<GameObject>(3);
+    public Queue<GameObject> PrefabsQueue = new Queue<GameObject>(16);
+    public List<GameObject> Prefabs = new List<GameObject>(10);
     public Transform CameraLeftTransform;
     public Transform CameraRightTransform;
 
     private int _prefabIndex = 0;
 
+    
+    
     private void OnEnable()
     {
+        
         foreach (var prefab in Prefabs)
         {
             PrefabsQueue.Enqueue(prefab);
         }
+        Prefabs.Clear();
+ 
+        
+        
+        for (int i = 0; i < 10; i++)
+        {
+            Random rand = new Random();
+            var a = rand.Next(0,2);
+
+            Prefabs.Add(Instantiate(Prefabs[a], new Vector3(0, 0, 0), Quaternion.identity));
+        }
+        
+        foreach (var prefab in Prefabs)
+        {
+            PrefabsQueue.Enqueue(prefab);
+        }
+
+       
+
+        Debug.Log(PrefabsQueue.Count);
     }
 
     void Start()
@@ -56,9 +80,7 @@ public class PlatformGenerator : MonoBehaviour
     {
         var transform = first_prefab.transform;
         transform.position = new Vector3
-            (furthest_prefab_x_position + furthest_prefab_x_size/2f + first_prefab_x_size/2f, transform.position.y,
+            (furthest_prefab_x_position + furthest_prefab_x_size/2f + first_prefab_x_size/2f -0.2f, transform.position.y,
             transform.position.z);
     }
-    
-   
-}
+} 

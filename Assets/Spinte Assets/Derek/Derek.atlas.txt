@@ -1,0 +1,139 @@
+
+Derek.png
+size: 2048,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+B_Cape
+  rotate: true
+  xy: 1107, 30
+  size: 224, 470
+  orig: 224, 470
+  offset: 0, 0
+  index: -1
+Backbone
+  rotate: true
+  xy: 612, 109
+  size: 48, 143
+  orig: 48, 143
+  offset: 0, 0
+  index: -1
+Fr_Cape
+  rotate: true
+  xy: 2, 25
+  size: 229, 487
+  orig: 229, 487
+  offset: 0, 0
+  index: -1
+Head
+  rotate: false
+  xy: 491, 47
+  size: 119, 110
+  orig: 119, 110
+  offset: 0, 0
+  index: -1
+L_Arm
+  rotate: true
+  xy: 491, 2
+  size: 43, 111
+  orig: 43, 111
+  offset: 0, 0
+  index: -1
+L_Fleg
+  rotate: false
+  xy: 1647, 102
+  size: 25, 152
+  orig: 25, 152
+  offset: 0, 0
+  index: -1
+L_Foot
+  rotate: false
+  xy: 804, 79
+  size: 73, 28
+  orig: 73, 28
+  offset: 0, 0
+  index: -1
+L_Hand
+  rotate: false
+  xy: 1674, 165
+  size: 58, 89
+  orig: 58, 89
+  offset: 0, 0
+  index: -1
+L_Leg
+  rotate: false
+  xy: 1613, 97
+  size: 32, 157
+  orig: 32, 157
+  offset: 0, 0
+  index: -1
+L_fhand
+  rotate: true
+  xy: 872, 109
+  size: 48, 95
+  orig: 48, 95
+  offset: 0, 0
+  index: -1
+Lagan
+  rotate: false
+  xy: 1734, 189
+  size: 73, 65
+  orig: 73, 65
+  offset: 0, 0
+  index: -1
+Neck
+  rotate: false
+  xy: 1674, 124
+  size: 25, 39
+  orig: 25, 39
+  offset: 0, 0
+  index: -1
+R_Arm
+  rotate: true
+  xy: 757, 109
+  size: 48, 113
+  orig: 48, 113
+  offset: 0, 0
+  index: -1
+R_Fhand
+  rotate: true
+  xy: 612, 47
+  size: 60, 103
+  orig: 60, 103
+  offset: 0, 0
+  index: -1
+R_Fleg
+  rotate: true
+  xy: 604, 2
+  size: 26, 152
+  orig: 26, 152
+  offset: 0, 0
+  index: -1
+R_Foot
+  rotate: true
+  xy: 1579, 30
+  size: 62, 26
+  orig: 62, 26
+  offset: 0, 0
+  index: -1
+R_Leg
+  rotate: false
+  xy: 1579, 94
+  size: 32, 160
+  orig: 32, 160
+  offset: 0, 0
+  index: -1
+R_hand
+  rotate: true
+  xy: 717, 48
+  size: 59, 85
+  orig: 59, 85
+  offset: 0, 0
+  index: -1
+Sword
+  rotate: true
+  xy: 491, 159
+  size: 95, 614
+  orig: 95, 614
+  offset: 0, 0
+  index: -1
