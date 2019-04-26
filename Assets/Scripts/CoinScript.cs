@@ -13,7 +13,9 @@ public class CoinScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(transform.position.x - 2.5f, transform.position.y, transform.position.z);
+        
+        transform.position = new Vector3(transform.position.x  + World.GAME_SPEED, transform.position.y, transform.position.z);
+        if (transform.position.x < -50) Destroy(this.gameObject);
     }
     
     

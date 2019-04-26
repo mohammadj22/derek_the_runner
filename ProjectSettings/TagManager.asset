@@ -16,8 +16,8 @@ TagManager:
   - Ground
   - Player
   - Coin
-  - 
-  - 
+  - UI
+  - PlatformObjects
   - 
   - 
   - 
@@ -40,6 +40,9 @@ TagManager:
   m_SortingLayers:
   - name: Background
     uniqueID: 3745526515
+    locked: 0
+  - name: Background Platform
+    uniqueID: 2608939189
     locked: 0
   - name: Default
     uniqueID: 0

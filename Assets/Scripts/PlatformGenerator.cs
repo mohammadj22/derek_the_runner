@@ -80,7 +80,7 @@ public class PlatformGenerator : MonoBehaviour
     {
         var transform = first_prefab.transform;
         transform.position = new Vector3
-            (furthest_prefab_x_position + furthest_prefab_x_size/2f + first_prefab_x_size/2f -0.2f, transform.position.y,
+            (furthest_prefab_x_position + World.GAME_SPEED + furthest_prefab_x_size/2f + first_prefab_x_size/2f -0.2f, transform.position.y,
             transform.position.z);
     }
 } 

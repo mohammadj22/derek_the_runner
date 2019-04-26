@@ -3,7 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Spine.Unity;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerPhysics : MonoBehaviour
 {
@@ -16,8 +19,10 @@ public class PlayerPhysics : MonoBehaviour
     public Transform coinCheck;
     public LayerMask groundLayer;
     public LayerMask coinLayer;
-    
-        private SkeletonAnimation _skeletonAnimation;
+    public LayerMask platformLayer;
+    public int coins;
+    public Text score;
+    private SkeletonAnimation _skeletonAnimation;
 
 
 
@@ -35,6 +40,7 @@ public class PlayerPhysics : MonoBehaviour
     void Start()
     {
         _skeletonAnimation = GetComponent<SkeletonAnimation>();
+        coins = 0;
     }
 
     // Update is called once per frame
@@ -43,22 +49,41 @@ public class PlayerPhysics : MonoBehaviour
         // inits //
         if (sliding > 0) sliding -= 1;
         foundCoin();
+        collisionCheck();
         
         
         // gravity //
-        _verticalSpeed -= 0.025f;
+        _verticalSpeed -= 0.05f;
         if (IsGrounded()) _verticalSpeed = 0;
         
         
         // inputs //
 
         // jump //
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.touches[0];
+            Rect rect = new Rect(640, 0, 1280, 720);
+            if (rect.Contains(touch.position) && touch.phase == TouchPhase.Began && CanJump())
+            {
+                _verticalSpeed = jumpSpeed;
+            }
+        }
         if (CanJump() && Input.GetKeyDown("space"))
         {
             _verticalSpeed = jumpSpeed;
         }
         
         // slide //
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.touches[0];
+            Rect rect = new Rect(0, 0, 640, 720);
+            if (rect.Contains(touch.position) && touch.phase == TouchPhase.Began && CanSlide())
+            {
+                sliding = 30;
+            }
+        }
         if (CanSlide() && Input.GetKeyDown(KeyCode.S))
         {
             sliding = 30;
@@ -114,14 +139,21 @@ public class PlayerPhysics : MonoBehaviour
 
     void foundCoin()
     {
-        var Coins = Physics2D.OverlapCircleAll(coinCheck.position, 1f, coinLayer).ToList();
+        var Coins = Physics2D.OverlapCircleAll(coinCheck.position, 2f, coinLayer).ToList();
         foreach (var coin in Coins)
         {
-            Debug.Log(coin);
+            coins += 1;
             Destroy(coin.gameObject);
+            score.text = "Coins: " + coins;
         }
     }
 
+    void collisionCheck()
+    {
+        if (Physics2D.OverlapCircle(coinCheck.position, 2f, platformLayer))
+            SceneManager.LoadScene("SampleScene");
+    }
+    
 }
 
 
