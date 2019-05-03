@@ -41,9 +41,6 @@ public class PlatformGenerator : MonoBehaviour
             PrefabsQueue.Enqueue(prefab);
         }
 
-       
-
-        Debug.Log(PrefabsQueue.Count);
     }
 
     void Start()

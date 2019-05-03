@@ -12,6 +12,8 @@ public class World : MonoBehaviour
     
     public GameObject Coin;
     public GameObject groundPlatformObject;
+    public GameObject fireEnemy;
+    public GameObject derekPosition;
 
     private int counter;
 
@@ -31,12 +33,11 @@ public class World : MonoBehaviour
         if (counter != 0) return;
 
         GAME_SPEED -= 0.0011f;
-        Debug.Log(GAME_SPEED);
         int temp = rand.Next(0, 15);
         
         if (temp < 2) generateCoin();
         else if (temp < 3) generateObject();
-
+        else if (temp < 4) generateFireEnemy();
     }
 
 
@@ -48,8 +49,29 @@ public class World : MonoBehaviour
         else if (temp2 == 1) Instantiate(Coin , new Vector3(35, 8f, 0), Quaternion.identity);
         else Instantiate(Coin , new Vector3(35, 12f, 0), Quaternion.identity);
         counter = 35;
+    }
+    
+    void generateFireEnemy()
+    {
+        int temp2 = rand.Next(0, 3);
 
-    }    
+        if (temp2 == 0)
+        {
+            var t = Instantiate(fireEnemy , new Vector3(35, 4f, 0), Quaternion.identity);
+            t.GetComponent<FireEnemy>().derekTransform = derekPosition.transform;
+        }else if (temp2 == 1)
+        {
+            var t = Instantiate(fireEnemy , new Vector3(35, 8f, 0), Quaternion.identity);
+            t.GetComponent<FireEnemy>().derekTransform = derekPosition.transform;
+        }
+        else
+        {
+            var t = Instantiate(fireEnemy , new Vector3(35, 12f, 0), Quaternion.identity);
+            t.GetComponent<FireEnemy>().derekTransform = derekPosition.transform;
+        }
+
+        counter = 35;
+    }  
     
     void generateObject()
     {

@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Aria\.Rider2018.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Aria\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_derek_the_runner.1720192351.00" t="ExcludeRecursive" />
-    <e p="C:\Users\Aria\Desktop\project k\Kamp Project V3\unity project\derek_the_runner" t="IncludeRecursive">
+    <e p="$USER_HOME$/Library/Caches/Rider2018.3/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/Rider2018.3/resharper-host/local/Transient/ReSharperHost/v183/SolutionCaches/_derek_the_runner.-522428679.00" t="ExcludeRecursive" />
+    <e p="$PROJECT_DIR$" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="BreakableBarricade.cs" t="Include" />
           <e p="Camera.cs" t="Include" />
           <e p="CoinScript.cs" t="Include" />
+          <e p="FireEnemy.cs" t="Include" />
           <e p="MovingBackground.cs" t="Include" />
           <e p="MovingPlatforms.cs" t="Include" />
           <e p="PlatformGenerator.cs" t="Include" />

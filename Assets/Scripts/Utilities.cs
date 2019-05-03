@@ -21,7 +21,6 @@ public class Utilities : MonoBehaviour
             }
             catch (Exception exception)
             {
-                Console.WriteLine(exception);
                 throw;
             }
         }
