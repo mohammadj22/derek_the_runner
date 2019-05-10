@@ -1268,6 +1268,9 @@ MonoBehaviour:
   Coin: {fileID: 3804103957079005683, guid: 21b8d50a2b026694faf6de945a2e225b, type: 3}
   groundPlatformObject: {fileID: 4348014529694596337, guid: a83340ee2a8e09c409759e4ab131a989,
     type: 3}
+  fireEnemy: {fileID: 9119670111466068827, guid: 704230461f46247f4bd48ac8a6b8dbe4,
+    type: 3}
+  derekPosition: {fileID: 1911846167}
 --- !u!4 &1462287110
 Transform:
   m_ObjectHideFlags: 0

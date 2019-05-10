@@ -151,7 +151,8 @@ public class PlayerPhysics : MonoBehaviour
     void collisionCheck()
     {
         if (Physics2D.OverlapCircle(coinCheck.position, 2f, platformLayer))
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene("SampleScene");        
+
     }
     
 }

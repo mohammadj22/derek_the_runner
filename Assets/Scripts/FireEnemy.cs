@@ -13,6 +13,7 @@ public class FireEnemy : MonoBehaviour
 
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, derekTransform.position, 1f);
+        transform.position = new Vector3(transform.position.x + World.GAME_SPEED, transform.position.y, transform.position.z);
+        if (transform.position.x < -50) Destroy(this.gameObject);
     }
 }
