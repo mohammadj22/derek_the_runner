@@ -943,14 +943,14 @@ RectTransform:
   m_GameObject: {fileID: 1355224631}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 1618181067}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 150, y: -41.1}
+  m_AnchoredPosition: {x: 200, y: -75}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1355224633
@@ -980,7 +980,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 3
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -1019,7 +1019,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1368183226}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.08, y: 3.9, z: 0}
+  m_LocalPosition: {x: 0, y: 5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1510536153}
@@ -1268,6 +1268,10 @@ MonoBehaviour:
   Coin: {fileID: 3804103957079005683, guid: 21b8d50a2b026694faf6de945a2e225b, type: 3}
   groundPlatformObject: {fileID: 4348014529694596337, guid: a83340ee2a8e09c409759e4ab131a989,
     type: 3}
+  fireEnemy: {fileID: 9119670111466068827, guid: 704230461f46247f4bd48ac8a6b8dbe4,
+    type: 3}
+  derekPosition: {fileID: 1911846167}
+  enemy: {fileID: 2018882060084732853, guid: 4d0b87fb20d0f8f4e8282a90c17edcd3, type: 3}
 --- !u!4 &1462287110
 Transform:
   m_ObjectHideFlags: 0
@@ -1342,7 +1346,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.14616299, y: 4.077929}
+  m_Offset: {x: 0, y: 5}
   m_SpriteTilingProperty:
     border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
     pivot: {x: 0.5, y: 0.5}
@@ -1353,7 +1357,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6.7665462, y: 8.315858}
+  m_Size: {x: 5, y: 10}
   m_EdgeRadius: 0
 --- !u!50 &1510536155
 Rigidbody2D:
@@ -1715,12 +1719,12 @@ PrefabInstance:
     - target: {fileID: 8231739503026731984, guid: 3083b00f95f099e47a726177012433ce,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18.5
+      value: -19.58
       objectReference: {fileID: 0}
     - target: {fileID: 8231739503026731984, guid: 3083b00f95f099e47a726177012433ce,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.8
+      value: 0.73
       objectReference: {fileID: 0}
     - target: {fileID: 8231739503026731984, guid: 3083b00f95f099e47a726177012433ce,
         type: 3}

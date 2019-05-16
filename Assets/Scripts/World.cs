@@ -14,6 +14,7 @@ public class World : MonoBehaviour
     public GameObject groundPlatformObject;
     public GameObject fireEnemy;
     public GameObject derekPosition;
+    public GameObject enemy;
 
     private int counter;
 
@@ -38,37 +39,31 @@ public class World : MonoBehaviour
         if (temp < 2) generateCoin();
         else if (temp < 3) generateObject();
         else if (temp < 4) generateFireEnemy();
+        else if (temp < 5) generateEnemy();
     }
 
 
     void generateCoin()
     {
-        int temp2 = rand.Next(0, 3);
+        int temp2 = rand.Next(0, 2);
         
-        if (temp2 == 0) Instantiate(Coin , new Vector3(35, 4f, 0), Quaternion.identity);
-        else if (temp2 == 1) Instantiate(Coin , new Vector3(35, 8f, 0), Quaternion.identity);
-        else Instantiate(Coin , new Vector3(35, 12f, 0), Quaternion.identity);
+        if (temp2 == 0) Instantiate(Coin , new Vector3(35, 6f, 0), Quaternion.identity);
+        else if (temp2 == 1) Instantiate(Coin , new Vector3(35, 12f, 0), Quaternion.identity);
         counter = 35;
     }
     
     void generateFireEnemy()
     {
-        int temp2 = rand.Next(0, 3);
+        int temp2 = rand.Next(0, 2);
 
         if (temp2 == 0)
         {
             var t = Instantiate(fireEnemy , new Vector3(35, 4f, 0), Quaternion.identity);
-            t.GetComponent<FireEnemy>().derekTransform = derekPosition.transform;
         }else if (temp2 == 1)
         {
             var t = Instantiate(fireEnemy , new Vector3(35, 8f, 0), Quaternion.identity);
-            t.GetComponent<FireEnemy>().derekTransform = derekPosition.transform;
         }
-        else
-        {
-            var t = Instantiate(fireEnemy , new Vector3(35, 12f, 0), Quaternion.identity);
-            t.GetComponent<FireEnemy>().derekTransform = derekPosition.transform;
-        }
+  
 
         counter = 35;
     }  
@@ -77,6 +72,14 @@ public class World : MonoBehaviour
     {
 
         Instantiate(groundPlatformObject , new Vector3(35, 2.5f, 0), Quaternion.identity);
+        counter = 35;
+
+    }    
+    
+    void generateEnemy()
+    {
+
+        Instantiate(enemy , new Vector3(35, 0f, 0), Quaternion.identity);
         counter = 35;
 
     }

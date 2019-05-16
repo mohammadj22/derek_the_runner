@@ -7,6 +7,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class PlayerPhysics : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class PlayerPhysics : MonoBehaviour
     public int coins;
     public Text score;
     private SkeletonAnimation _skeletonAnimation;
+    private BoxCollider2D _boxCollider;
 
 
 
@@ -40,6 +42,7 @@ public class PlayerPhysics : MonoBehaviour
     void Start()
     {
         _skeletonAnimation = GetComponent<SkeletonAnimation>();
+        _boxCollider = GetComponent<BoxCollider2D>();
         coins = 0;
     }
 
@@ -47,9 +50,25 @@ public class PlayerPhysics : MonoBehaviour
     void Update()
     {
         // inits //
+        var pos = transform.position;
         if (sliding > 0) sliding -= 1;
         foundCoin();
         collisionCheck();
+        
+        // collider set //
+        if (sliding > 0)
+        {
+            _boxCollider.size = new Vector2(5, 5);
+            _boxCollider.offset = new Vector2(0, 2.5f);
+        }
+        else
+        {
+            _boxCollider.size = new Vector2(5, 10);
+            _boxCollider.offset = new Vector2(0, 5);
+        }
+        
+        // set coin-check position //
+        coinCheck.transform.position = new Vector3(pos.x, pos.y + _boxCollider.size.y/2, pos.z);
         
         
         // gravity //
@@ -91,7 +110,7 @@ public class PlayerPhysics : MonoBehaviour
         
         
         // vertical movement
-        transform.position = new Vector3(transform.position.x, transform.position.y + _verticalSpeed, transform.position.z);
+        transform.position = new Vector3(pos.x, pos.y + _verticalSpeed, pos.z);
         
         
         // animation state //
@@ -104,15 +123,18 @@ public class PlayerPhysics : MonoBehaviour
         switch (_animationState)
         {
             case JUMP_ANIMATION:
-                if (_skeletonAnimation.AnimationName != "Jump") _skeletonAnimation.state.SetAnimation(0, "Jump", true);
+                if (_skeletonAnimation.AnimationName != "Jump") 
+                    _skeletonAnimation.state.SetAnimation(0, "Jump", true);
                 break;
             
             case SLIDE_ANIMATION:
-                if (_skeletonAnimation.AnimationName != "Slide_In") _skeletonAnimation.state.SetAnimation(0, "Slide_In", true);
+                if (_skeletonAnimation.AnimationName != "Slide_In") 
+                    _skeletonAnimation.state.SetAnimation(0, "Slide_In", true);
                 break;
             
             case RUN_ANIMATION:
-                if (_skeletonAnimation.AnimationName != "Run") _skeletonAnimation.state.SetAnimation(0, "Run", true);
+                if (_skeletonAnimation.AnimationName != "Run")
+                    _skeletonAnimation.state.SetAnimation(0, "Run", true);
                 break;
         }
     }
@@ -150,10 +172,12 @@ public class PlayerPhysics : MonoBehaviour
 
     void collisionCheck()
     {
-        if (Physics2D.OverlapCircle(coinCheck.position, 2f, platformLayer))
-            SceneManager.LoadScene("SampleScene");
+        if (Physics2D.OverlapCircle(coinCheck.position, 2.5f, platformLayer))
+            SceneManager.LoadScene("SampleScene");        
+
     }
-    
+
+
 }
 
 
