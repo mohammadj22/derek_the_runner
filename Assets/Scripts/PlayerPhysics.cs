@@ -94,7 +94,7 @@ public class PlayerPhysics : MonoBehaviour
         {
             Touch touch = Input.touches[0];
             Rect rect = new Rect(Screen.width*1/3, 0, Screen.width*2/3, Screen.height);
-            if (rect.Contains(touch.position) && touch.phase == TouchPhase.Began && CanJump())
+            if (rect.Contains(touch.position) && touch.phase == TouchPhase.Began && CanAttack())
             {
                 if (sliding > 0) sliding = 0;
                 attacking = 15;
