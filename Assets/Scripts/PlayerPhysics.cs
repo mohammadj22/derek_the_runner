@@ -8,12 +8,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
+using Object = System.Object;
 
 public class PlayerPhysics : MonoBehaviour
 {
 
     public float jumpSpeed = 0.3f;
-    public int sliding;
+    public int sliding = 0;
+    public int attacking = 0;
     
     
     public Transform groundCheck;
@@ -21,6 +23,7 @@ public class PlayerPhysics : MonoBehaviour
     public LayerMask groundLayer;
     public LayerMask coinLayer;
     public LayerMask platformLayer;
+    public LayerMask enemyLayer;
     public int coins;
     public Text score;
     private SkeletonAnimation _skeletonAnimation;
@@ -35,6 +38,7 @@ public class PlayerPhysics : MonoBehaviour
     private const string JUMP_ANIMATION = "jump";
     private const string SLIDE_ANIMATION = "slide";
     private const string RUN_ANIMATION = "idle";
+    private const string ATTACK_ANIMATION = "Attack_Sword";
         
     
     
@@ -51,9 +55,12 @@ public class PlayerPhysics : MonoBehaviour
     {
         // inits //
         var pos = transform.position;
+        if (!IsGrounded() && sliding > 0) sliding = 30;
         if (sliding > 0) sliding -= 1;
+        if (attacking > 0) attacking -= 1;
         foundCoin();
         collisionCheck();
+        enemyCheck();
         
         // collider set //
         if (sliding > 0)
@@ -78,6 +85,14 @@ public class PlayerPhysics : MonoBehaviour
         
         // inputs //
 
+        // attack //
+        if (CanAttack() && Input.GetKeyDown(KeyCode.F))
+        {
+            if (sliding > 0) sliding = 0;
+            attacking = 15;
+
+        }
+        
         // jump //
         if (Input.touchCount > 0)
         {
@@ -85,12 +100,17 @@ public class PlayerPhysics : MonoBehaviour
             Rect rect = new Rect(640, 0, 1280, 720);
             if (rect.Contains(touch.position) && touch.phase == TouchPhase.Began && CanJump())
             {
+                if (sliding > 0) sliding = 0;
+                if (attacking > 0) attacking = 0;
                 _verticalSpeed = jumpSpeed;
             }
         }
         if (CanJump() && Input.GetKeyDown("space"))
         {
+            if (sliding > 0) sliding = 0;
+            if (attacking > 0) attacking = 0;
             _verticalSpeed = jumpSpeed;
+            
         }
         
         // slide //
@@ -100,11 +120,13 @@ public class PlayerPhysics : MonoBehaviour
             Rect rect = new Rect(0, 0, 640, 720);
             if (rect.Contains(touch.position) && touch.phase == TouchPhase.Began && CanSlide())
             {
+                if (attacking > 0) attacking = 0;
                 sliding = 30;
             }
         }
         if (CanSlide() && Input.GetKeyDown(KeyCode.S))
         {
+            if (attacking > 0) attacking = 0;
             sliding = 30;
         }
         
@@ -114,14 +136,21 @@ public class PlayerPhysics : MonoBehaviour
         
         
         // animation state //
-        if         (!IsGrounded()) _animationState = JUMP_ANIMATION;
+        if    (attacking > 0)   _animationState = ATTACK_ANIMATION;
+        else if    (!IsGrounded()) _animationState = JUMP_ANIMATION;
         else if    (sliding > 0) _animationState = SLIDE_ANIMATION;
-        else       _animationState = RUN_ANIMATION;
+        else                         _animationState = RUN_ANIMATION;
+    
         
         
         // animation set //
         switch (_animationState)
         {
+            case ATTACK_ANIMATION:
+                if (_skeletonAnimation.AnimationName != ATTACK_ANIMATION)
+                    _skeletonAnimation.state.SetAnimation(0, ATTACK_ANIMATION, true);
+                break;
+            
             case JUMP_ANIMATION:
                 if (_skeletonAnimation.AnimationName != "Jump") 
                     _skeletonAnimation.state.SetAnimation(0, "Jump", true);
@@ -135,21 +164,31 @@ public class PlayerPhysics : MonoBehaviour
             case RUN_ANIMATION:
                 if (_skeletonAnimation.AnimationName != "Run")
                     _skeletonAnimation.state.SetAnimation(0, "Run", true);
-                break;
+                break;            
+            
+
         }
     }
 
     bool CanJump()
     {
-        if (IsGrounded() && sliding == 0) return true;
+        if (IsGrounded()) return true;
         return false;
 
     }
 
     bool CanSlide()
     {
+        if (_verticalSpeed < 0) return true;
         if (IsGrounded()) return true;
         return false;
+    }
+    
+    bool CanAttack()
+    {
+        return true;
+        //if (IsGrounded()) return true;
+        //return false;
     }
 
 
@@ -174,6 +213,17 @@ public class PlayerPhysics : MonoBehaviour
     {
         if (Physics2D.OverlapCircle(coinCheck.position, 2.5f, platformLayer))
             SceneManager.LoadScene("SampleScene");        
+
+    }
+    
+    void enemyCheck()
+    {
+        var enemy = Physics2D.OverlapCircle(coinCheck.position, 2.5f, enemyLayer);
+
+        if (enemy == null) return;
+        if (attacking == 0) SceneManager.LoadScene("SampleScene");        
+        
+        else Destroy(enemy.gameObject);
 
     }
 

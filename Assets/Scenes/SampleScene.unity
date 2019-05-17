@@ -1836,6 +1836,11 @@ PrefabInstance:
       propertyPath: platformLayer.m_Bits
       value: 4096
       objectReference: {fileID: 0}
+    - target: {fileID: 8231739503026731999, guid: 3083b00f95f099e47a726177012433ce,
+        type: 3}
+      propertyPath: enemyLayer.m_Bits
+      value: 8192
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8231739503026731985, guid: 3083b00f95f099e47a726177012433ce, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3083b00f95f099e47a726177012433ce, type: 3}

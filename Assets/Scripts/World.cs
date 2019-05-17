@@ -33,7 +33,7 @@ public class World : MonoBehaviour
         if (counter > 0) counter--;
         if (counter != 0) return;
 
-        GAME_SPEED -= 0.0011f;
+        //GAME_SPEED -= 0.0011f;
         int temp = rand.Next(0, 15);
         
         if (temp < 2) generateCoin();
@@ -47,8 +47,8 @@ public class World : MonoBehaviour
     {
         int temp2 = rand.Next(0, 2);
         
-        if (temp2 == 0) Instantiate(Coin , new Vector3(35, 6f, 0), Quaternion.identity);
-        else if (temp2 == 1) Instantiate(Coin , new Vector3(35, 12f, 0), Quaternion.identity);
+        if (temp2 == 0) Instantiate(Coin , new Vector3(70, 6f, 0), Quaternion.identity);
+        else if (temp2 == 1) Instantiate(Coin , new Vector3(70, 12f, 0), Quaternion.identity);
         counter = 35;
     }
     
@@ -58,10 +58,10 @@ public class World : MonoBehaviour
 
         if (temp2 == 0)
         {
-            var t = Instantiate(fireEnemy , new Vector3(35, 4f, 0), Quaternion.identity);
+            var t = Instantiate(fireEnemy , new Vector3(70, 4f, 0), Quaternion.identity);
         }else if (temp2 == 1)
         {
-            var t = Instantiate(fireEnemy , new Vector3(35, 8f, 0), Quaternion.identity);
+            var t = Instantiate(fireEnemy , new Vector3(70, 8f, 0), Quaternion.identity);
         }
   
 
@@ -71,7 +71,7 @@ public class World : MonoBehaviour
     void generateObject()
     {
 
-        Instantiate(groundPlatformObject , new Vector3(35, 2.5f, 0), Quaternion.identity);
+        Instantiate(groundPlatformObject , new Vector3(70, 2.5f, 0), Quaternion.identity);
         counter = 35;
 
     }    
@@ -79,7 +79,7 @@ public class World : MonoBehaviour
     void generateEnemy()
     {
 
-        Instantiate(enemy , new Vector3(35, 0f, 0), Quaternion.identity);
+        Instantiate(enemy , new Vector3(70, 0f, 0), Quaternion.identity);
         counter = 35;
 
     }
