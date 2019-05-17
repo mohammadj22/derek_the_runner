@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using Spine.Unity;
 using UnityEditor;
 using UnityEngine;
@@ -16,6 +17,8 @@ public class PlayerPhysics : MonoBehaviour
     public float jumpSpeed = 0.3f;
     public int sliding = 0;
     public int attacking = 0;
+
+
     
     
     public Transform groundCheck;
@@ -47,6 +50,7 @@ public class PlayerPhysics : MonoBehaviour
     {
         _skeletonAnimation = GetComponent<SkeletonAnimation>();
         _boxCollider = GetComponent<BoxCollider2D>();
+        
         coins = 0;
     }
 
@@ -86,6 +90,16 @@ public class PlayerPhysics : MonoBehaviour
         // inputs //
 
         // attack //
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.touches[0];
+            Rect rect = new Rect(Screen.width*1/3, 0, Screen.width*2/3, Screen.height);
+            if (rect.Contains(touch.position) && touch.phase == TouchPhase.Began && CanJump())
+            {
+                if (sliding > 0) sliding = 0;
+                attacking = 15;
+            }
+        }
         if (CanAttack() && Input.GetKeyDown(KeyCode.F))
         {
             if (sliding > 0) sliding = 0;
@@ -97,7 +111,7 @@ public class PlayerPhysics : MonoBehaviour
         if (Input.touchCount > 0)
         {
             Touch touch = Input.touches[0];
-            Rect rect = new Rect(640, 0, 1280, 720);
+            Rect rect = new Rect(Screen.width*2/3, 0, Screen.width, Screen.height);
             if (rect.Contains(touch.position) && touch.phase == TouchPhase.Began && CanJump())
             {
                 if (sliding > 0) sliding = 0;
@@ -117,7 +131,7 @@ public class PlayerPhysics : MonoBehaviour
         if (Input.touchCount > 0)
         {
             Touch touch = Input.touches[0];
-            Rect rect = new Rect(0, 0, 640, 720);
+            Rect rect = new Rect(0, 0, Screen.width/3, Screen.height);
             if (rect.Contains(touch.position) && touch.phase == TouchPhase.Began && CanSlide())
             {
                 if (attacking > 0) attacking = 0;
@@ -153,7 +167,7 @@ public class PlayerPhysics : MonoBehaviour
             
             case JUMP_ANIMATION:
                 if (_skeletonAnimation.AnimationName != "Jump") 
-                    _skeletonAnimation.state.SetAnimation(0, "Jump", true);
+                    _skeletonAnimation.state.SetAnimation(0, "Jump", true).TimeScale = 0.8f;
                 break;
             
             case SLIDE_ANIMATION:
@@ -179,6 +193,7 @@ public class PlayerPhysics : MonoBehaviour
 
     bool CanSlide()
     {
+        if (sliding > 0) return false;
         if (_verticalSpeed < 0) return true;
         if (IsGrounded()) return true;
         return false;
@@ -218,12 +233,12 @@ public class PlayerPhysics : MonoBehaviour
     
     void enemyCheck()
     {
-        var enemy = Physics2D.OverlapCircle(coinCheck.position, 2.5f, enemyLayer);
+        if (Physics2D.OverlapCircle(coinCheck.position, 2f, enemyLayer))
+            if (attacking == 0) SceneManager.LoadScene("SampleScene");        
 
-        if (enemy == null) return;
-        if (attacking == 0) SceneManager.LoadScene("SampleScene");        
+        var enemy = Physics2D.OverlapCircle(coinCheck.position, 3.5f, enemyLayer);
         
-        else Destroy(enemy.gameObject);
+        if (enemy != null && attacking>0) Destroy(enemy.gameObject);
 
     }
 
