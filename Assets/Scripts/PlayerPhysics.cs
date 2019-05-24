@@ -6,6 +6,7 @@ using System.Net;
 using Spine.Unity;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
@@ -31,6 +32,7 @@ public class PlayerPhysics : MonoBehaviour
     public int coins;
     public Text score;
     public Button attackButton;
+    private AttackButtonScript attackButtonScript;
     private SkeletonAnimation _skeletonAnimation;
     private BoxCollider2D _boxCollider;
 
@@ -52,6 +54,9 @@ public class PlayerPhysics : MonoBehaviour
     {
         _skeletonAnimation = GetComponent<SkeletonAnimation>();
         _boxCollider = GetComponent<BoxCollider2D>();
+        attackButtonScript = attackButton.GetComponent<AttackButtonScript>();
+        
+
         
         coins = 0;
     }
@@ -92,27 +97,16 @@ public class PlayerPhysics : MonoBehaviour
         // inputs //
 
         // attack //
-        if (Input.touchCount > 0)
+        if (attackButtonScript.buttonPressed)
         {
-            Touch touch = Input.touches[0];
-            //Rect rect = new Rect(attackButton.Get);
-//            Touch touch = Input.touches[0];
-//            Rect rect = new Rect(Screen.width*1/3, 0, Screen.width*2/3, Screen.height);
-//            if (rect.Contains(touch.position) && touch.phase == TouchPhase.Began && CanAttack())
-//            {
-//                if (sliding > 0) sliding = 0;
-//                attacking = 15;
-//            }
-        }
-        if (CanAttack() && Input.GetKeyDown(KeyCode.F))
-        {
+            attackButtonScript.buttonPressed = false;
             if (sliding > 0) sliding = 0;
             attacking = 15;
 
         }
         
         // jump //
-        if (Input.touchCount > 0)
+        else if (Input.touchCount > 0)
         {
             Touch touch = Input.touches[0];
             Rect rect = new Rect(Screen.width/2f, 0, Screen.width, Screen.height);
@@ -123,7 +117,7 @@ public class PlayerPhysics : MonoBehaviour
                 _verticalSpeed = jumpSpeed;
             }
         }
-        if (CanJump() && Input.GetKeyDown("space"))
+        else if (CanJump() && Input.GetKeyDown("space"))
         {
             if (sliding > 0) sliding = 0;
             if (attacking > 0) attacking = 0;
@@ -135,14 +129,17 @@ public class PlayerPhysics : MonoBehaviour
         if (Input.touchCount > 0)
         {
             Touch touch = Input.touches[0];
+            Debug.Log("1");
             Rect rect = new Rect(0, 0, Screen.width/2f, Screen.height);
             if (rect.Contains(touch.position) && touch.phase == TouchPhase.Began && CanSlide())
             {
+                Debug.Log("2");
+
                 if (attacking > 0) attacking = 0;
                 sliding = 30;
             }
         }
-        if (CanSlide() && Input.GetKeyDown(KeyCode.S))
+        else if (CanSlide() && Input.GetKeyDown(KeyCode.S))
         {
             if (attacking > 0) attacking = 0;
             sliding = 30;
@@ -244,6 +241,13 @@ public class PlayerPhysics : MonoBehaviour
         
         if (enemy != null && attacking>0) Destroy(enemy.gameObject);
 
+    }
+
+    
+
+    void touchAttack()
+    {
+        attacking = 15;
     }
 
 

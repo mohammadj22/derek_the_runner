@@ -7,6 +7,7 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
+          <e p="AttackButtonScript.cs" t="Include" />
           <e p="BreakableBarricade.cs" t="Include" />
           <e p="Camera.cs" t="Include" />
           <e p="CoinScript.cs" t="Include" />
