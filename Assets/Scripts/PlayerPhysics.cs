@@ -45,7 +45,7 @@ public class PlayerPhysics : MonoBehaviour
     private const string JUMP_ANIMATION = "jump";
     private const string SLIDE_ANIMATION = "slide";
     private const string RUN_ANIMATION = "idle";
-    private const string ATTACK_ANIMATION = "Attack_Sword";
+    private const string ATTACK_ANIMATION = "attack";
         
     
     
@@ -162,8 +162,8 @@ public class PlayerPhysics : MonoBehaviour
         switch (_animationState)
         {
             case ATTACK_ANIMATION:
-                if (_skeletonAnimation.AnimationName != ATTACK_ANIMATION)
-                    _skeletonAnimation.state.SetAnimation(0, ATTACK_ANIMATION, true);
+                if (_skeletonAnimation.AnimationName != "Attack_Sword")
+                    _skeletonAnimation.state.SetAnimation(0, "Attack_Sword", true);
                 break;
             
             case JUMP_ANIMATION:
