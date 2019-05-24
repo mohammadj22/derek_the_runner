@@ -9,6 +9,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
+using Button = UnityEngine.UI.Button;
 using Object = System.Object;
 
 public class PlayerPhysics : MonoBehaviour
@@ -29,6 +30,7 @@ public class PlayerPhysics : MonoBehaviour
     public LayerMask enemyLayer;
     public int coins;
     public Text score;
+    public Button attackButton;
     private SkeletonAnimation _skeletonAnimation;
     private BoxCollider2D _boxCollider;
 
@@ -93,12 +95,14 @@ public class PlayerPhysics : MonoBehaviour
         if (Input.touchCount > 0)
         {
             Touch touch = Input.touches[0];
-            Rect rect = new Rect(Screen.width*1/3, 0, Screen.width*2/3, Screen.height);
-            if (rect.Contains(touch.position) && touch.phase == TouchPhase.Began && CanAttack())
-            {
-                if (sliding > 0) sliding = 0;
-                attacking = 15;
-            }
+            //Rect rect = new Rect(attackButton.Get);
+//            Touch touch = Input.touches[0];
+//            Rect rect = new Rect(Screen.width*1/3, 0, Screen.width*2/3, Screen.height);
+//            if (rect.Contains(touch.position) && touch.phase == TouchPhase.Began && CanAttack())
+//            {
+//                if (sliding > 0) sliding = 0;
+//                attacking = 15;
+//            }
         }
         if (CanAttack() && Input.GetKeyDown(KeyCode.F))
         {
@@ -111,7 +115,7 @@ public class PlayerPhysics : MonoBehaviour
         if (Input.touchCount > 0)
         {
             Touch touch = Input.touches[0];
-            Rect rect = new Rect(Screen.width*2/3, 0, Screen.width, Screen.height);
+            Rect rect = new Rect(Screen.width/2f, 0, Screen.width, Screen.height);
             if (rect.Contains(touch.position) && touch.phase == TouchPhase.Began && CanJump())
             {
                 if (sliding > 0) sliding = 0;
@@ -131,7 +135,7 @@ public class PlayerPhysics : MonoBehaviour
         if (Input.touchCount > 0)
         {
             Touch touch = Input.touches[0];
-            Rect rect = new Rect(0, 0, Screen.width/3, Screen.height);
+            Rect rect = new Rect(0, 0, Screen.width/2f, Screen.height);
             if (rect.Contains(touch.position) && touch.phase == TouchPhase.Began && CanSlide())
             {
                 if (attacking > 0) attacking = 0;
