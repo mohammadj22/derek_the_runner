@@ -1434,6 +1434,7 @@ GameObject:
   - component: {fileID: 1492801669}
   - component: {fileID: 1492801668}
   - component: {fileID: 1492801667}
+  - component: {fileID: 1492801670}
   m_Layer: 5
   m_Name: Button_down
   m_TagString: Untagged
@@ -1525,7 +1526,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 98ba1156a6f55fa42b661e646ee565f1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3e96b61db75f79748bbebd6698eed929, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1542,6 +1543,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1492801665}
   m_CullTransparentMesh: 0
+--- !u!114 &1492801670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492801665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 435e8a960ff904141823f93d8c5be31b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite_on: {fileID: 21300000, guid: 7117c026870b0a84392377de49dbb95a, type: 3}
+  sprite_off: {fileID: 21300000, guid: 3e96b61db75f79748bbebd6698eed929, type: 3}
+  buttonPressed: 0
 --- !u!1 &1510536149 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8231739503026731996, guid: 3083b00f95f099e47a726177012433ce,
@@ -1834,6 +1850,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 403f330b3bda3ae4b884412bc6c8d870, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprite_on: {fileID: 21300000, guid: 2e0f96abe5c708745a125a73f3420f15, type: 3}
+  sprite_off: {fileID: 21300000, guid: 5d5d4c67a6ef31e42a29c14f6a27cdb6, type: 3}
+  buttonPressed: 0
 --- !u!114 &1797635294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1899,7 +1918,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: db9c7f4f5f0492b40ad42b5a5bf02182, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5d5d4c67a6ef31e42a29c14f6a27cdb6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2248,6 +2267,16 @@ PrefabInstance:
       propertyPath: attackButton
       value: 
       objectReference: {fileID: 1106914473}
+    - target: {fileID: 8231739503026731999, guid: 3083b00f95f099e47a726177012433ce,
+        type: 3}
+      propertyPath: slideButton
+      value: 
+      objectReference: {fileID: 1492801667}
+    - target: {fileID: 8231739503026731999, guid: 3083b00f95f099e47a726177012433ce,
+        type: 3}
+      propertyPath: jumpButton
+      value: 
+      objectReference: {fileID: 1797635294}
     m_RemovedComponents:
     - {fileID: 8231739503026731985, guid: 3083b00f95f099e47a726177012433ce, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3083b00f95f099e47a726177012433ce, type: 3}

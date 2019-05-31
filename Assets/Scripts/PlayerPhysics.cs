@@ -32,7 +32,11 @@ public class PlayerPhysics : MonoBehaviour
     public int coins;
     public Text score;
     public Button attackButton;
+    public Button jumpButton;
+    public Button slideButton;
     private AttackButtonScript attackButtonScript;
+    private JumpButtonScript jumpButtonScript;
+    private SlideButtonScript slideButtonScript;
     private SkeletonAnimation _skeletonAnimation;
     private BoxCollider2D _boxCollider;
 
@@ -55,6 +59,8 @@ public class PlayerPhysics : MonoBehaviour
         _skeletonAnimation = GetComponent<SkeletonAnimation>();
         _boxCollider = GetComponent<BoxCollider2D>();
         attackButtonScript = attackButton.GetComponent<AttackButtonScript>();
+        jumpButtonScript = jumpButton.GetComponent<JumpButtonScript>();
+        slideButtonScript = slideButton.GetComponent<SlideButtonScript>();
         
 
         
@@ -81,8 +87,12 @@ public class PlayerPhysics : MonoBehaviour
         }
         else
         {
-            _boxCollider.size = new Vector2(5, 10);
-            _boxCollider.offset = new Vector2(0, 5);
+            if (_boxCollider.size.y < 10)
+            {
+                _boxCollider.size = new Vector2(5, _boxCollider.size.y + 0.1f);
+                _boxCollider.offset = new Vector2(0, _boxCollider.offset.y + 0.05f);
+            }
+            
         }
         
         // set coin-check position //
@@ -97,6 +107,13 @@ public class PlayerPhysics : MonoBehaviour
         // inputs //
 
         // attack //
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            if (sliding > 0) sliding = 0;
+            attacking = 15;
+
+        }
+        
         if (attackButtonScript.buttonPressed)
         {
             attackButtonScript.buttonPressed = false;
@@ -106,19 +123,27 @@ public class PlayerPhysics : MonoBehaviour
         }
         
         // jump //
-        else if (Input.touchCount > 0)
+//        if (Input.touchCount > 0)
+//        {
+//            Touch touch = Input.touches[0];
+//            Rect rect = new Rect(Screen.width/2f, 0, Screen.width, Screen.height);
+//            if (rect.Contains(touch.position) && touch.phase == TouchPhase.Began && CanJump())
+//            {
+//                if (sliding > 0) sliding = 0;
+//                if (attacking > 0) attacking = 0;
+//                _verticalSpeed = jumpSpeed;
+//            }
+//        }
+        if (CanJump() && Input.GetKeyDown("space"))
         {
-            Touch touch = Input.touches[0];
-            Rect rect = new Rect(Screen.width/2f, 0, Screen.width, Screen.height);
-            if (rect.Contains(touch.position) && touch.phase == TouchPhase.Began && CanJump())
-            {
-                if (sliding > 0) sliding = 0;
-                if (attacking > 0) attacking = 0;
-                _verticalSpeed = jumpSpeed;
-            }
+            if (sliding > 0) sliding = 0;
+            if (attacking > 0) attacking = 0;
+            _verticalSpeed = jumpSpeed;
+            
         }
-        else if (CanJump() && Input.GetKeyDown("space"))
+        if (CanJump() && jumpButtonScript.buttonPressed)
         {
+            jumpButtonScript.buttonPressed = false;
             if (sliding > 0) sliding = 0;
             if (attacking > 0) attacking = 0;
             _verticalSpeed = jumpSpeed;
@@ -126,24 +151,31 @@ public class PlayerPhysics : MonoBehaviour
         }
         
         // slide //
-        if (Input.touchCount > 0)
-        {
-            Touch touch = Input.touches[0];
-            Debug.Log("1");
-            Rect rect = new Rect(0, 0, Screen.width/2f, Screen.height);
-            if (rect.Contains(touch.position) && touch.phase == TouchPhase.Began && CanSlide())
-            {
-                Debug.Log("2");
-
-                if (attacking > 0) attacking = 0;
-                sliding = 30;
-            }
-        }
-        else if (CanSlide() && Input.GetKeyDown(KeyCode.S))
+//        if (Input.touchCount > 0)
+//        {
+//            Touch touch = Input.touches[0];
+//            Debug.Log("1");
+//            Rect rect = new Rect(0, 0, Screen.width/2f, Screen.height);
+//            if (rect.Contains(touch.position) && touch.phase == TouchPhase.Began && CanSlide())
+//            {
+//                Debug.Log("2");
+//
+//                if (attacking > 0) attacking = 0;
+//                sliding = 30;
+//            }
+//        }
+        if (CanSlide() && Input.GetKeyDown(KeyCode.S))
         {
             if (attacking > 0) attacking = 0;
             sliding = 30;
         }
+        if (CanSlide() && slideButtonScript.buttonPressed)
+        {
+            slideButtonScript.buttonPressed = false;
+            if (attacking > 0) attacking = 0;
+            sliding = 30;
+        }
+
         
         
         // vertical movement

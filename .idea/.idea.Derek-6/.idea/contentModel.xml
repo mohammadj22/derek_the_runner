@@ -13,12 +13,14 @@
           <e p="CoinScript.cs" t="Include" />
           <e p="EnemyScript.cs" t="Include" />
           <e p="FireEnemy.cs" t="Include" />
+          <e p="JumpButtonScript.cs" t="Include" />
           <e p="MovingBackground.cs" t="Include" />
           <e p="MovingPlatforms.cs" t="Include" />
           <e p="PlatformGenerator.cs" t="Include" />
           <e p="PlatformScript.cs" t="Include" />
           <e p="Player.cs" t="Include" />
           <e p="PlayerPhysics.cs" t="Include" />
+          <e p="SlideButtonScript.cs" t="Include" />
           <e p="Utilities.cs" t="Include" />
           <e p="World.cs" t="Include" />
         </e>
