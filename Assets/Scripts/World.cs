@@ -8,13 +8,14 @@ using Random = System.Random;
 public class World : MonoBehaviour
 {
 
-    public static float GAME_SPEED = -0.6f;
+    public static float GAME_SPEED = -0.5f;
     
     public GameObject Coin;
     public GameObject groundPlatformObject;
     public GameObject fireEnemy;
     public GameObject derekPosition;
     public GameObject enemy;
+    public GameObject gas;
 
     private int counter;
 
@@ -35,11 +36,15 @@ public class World : MonoBehaviour
 
         //GAME_SPEED -= 0.0011f;
         int temp = rand.Next(0, 15);
-        
+
+        if (temp < 3) generateGas();
+
         if (temp < 2) generateCoin();
         else if (temp < 3) generateObject();
         else if (temp < 4) generateFireEnemy();
         else if (temp < 5) generateEnemy();
+        
+        
     }
 
 
@@ -47,8 +52,8 @@ public class World : MonoBehaviour
     {
         int temp2 = rand.Next(0, 2);
         
-        if (temp2 == 0) Instantiate(Coin , new Vector3(70, 6f, 0), Quaternion.identity);
-        else if (temp2 == 1) Instantiate(Coin , new Vector3(70, 12f, 0), Quaternion.identity);
+        if (temp2 == 0) Instantiate(Coin , new Vector3(70, 3.5f, 0), Quaternion.identity);
+        else if (temp2 == 1) Instantiate(Coin , new Vector3(70, 9.5f, 0), Quaternion.identity);
         counter = 35;
     }
     
@@ -58,10 +63,10 @@ public class World : MonoBehaviour
 
         if (temp2 == 0)
         {
-            var t = Instantiate(fireEnemy , new Vector3(70, 4f, 0), Quaternion.identity);
+            var t = Instantiate(fireEnemy , new Vector3(70, 1.5f, 0), Quaternion.identity);
         }else if (temp2 == 1)
         {
-            var t = Instantiate(fireEnemy , new Vector3(70, 8f, 0), Quaternion.identity);
+            var t = Instantiate(fireEnemy , new Vector3(70, 5.5f, 0), Quaternion.identity);
         }
   
 
@@ -71,7 +76,7 @@ public class World : MonoBehaviour
     void generateObject()
     {
 
-        Instantiate(groundPlatformObject , new Vector3(70, 2.5f, 0), Quaternion.identity);
+        Instantiate(groundPlatformObject , new Vector3(70, 0f, 0), Quaternion.identity);
         counter = 35;
 
     }    
@@ -79,8 +84,14 @@ public class World : MonoBehaviour
     void generateEnemy()
     {
 
-        Instantiate(enemy , new Vector3(70, 0f, 0), Quaternion.identity);
+        Instantiate(enemy , new Vector3(70, -2.5f, 0), Quaternion.identity);
         counter = 35;
 
+    }
+
+    void generateGas()
+    {
+        float temp_x = rand.Next(-5, 40);
+        Instantiate(gas, new Vector3(temp_x, -9.5f, 0), Quaternion.identity);
     }
 }

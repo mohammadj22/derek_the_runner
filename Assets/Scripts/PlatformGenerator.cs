@@ -8,10 +8,17 @@ using Random = System.Random;
 public class PlatformGenerator : MonoBehaviour
 {
     
-    public Queue<GameObject> PrefabsQueue = new Queue<GameObject>(16);
+    private Queue<GameObject> _prefabsQueue = new Queue<GameObject>(16);
+    private Queue<GameObject> _frontPrefabsQueue = new Queue<GameObject>(16);
+    
     public List<GameObject> Prefabs = new List<GameObject>(10);
+    public List<GameObject> FrontPrefabs = new List<GameObject>(10);
+    
     public Transform CameraLeftTransform;
     public Transform CameraRightTransform;
+    private Dictionary<String, float> _prefabSizes = new Dictionary<string, float>();
+    private Dictionary<String, float> _frontPrefabSizes = new Dictionary<string, float>();
+    
 
     private int _prefabIndex = 0;
 
@@ -22,23 +29,14 @@ public class PlatformGenerator : MonoBehaviour
         
         foreach (var prefab in Prefabs)
         {
-            PrefabsQueue.Enqueue(prefab);
-        }
-        Prefabs.Clear();
- 
+            _prefabsQueue.Enqueue(prefab);
+            _prefabSizes.Add(prefab.name, Utilities.GetObjectXSize(prefab));
+        }        
         
-        
-        for (int i = 0; i < 10; i++)
+        foreach (var prefab in FrontPrefabs)
         {
-            Random rand = new Random();
-            var a = rand.Next(0,2);
-
-            Prefabs.Add(Instantiate(Prefabs[a], new Vector3(0, 0, 0), Quaternion.identity));
-        }
-        
-        foreach (var prefab in Prefabs)
-        {
-            PrefabsQueue.Enqueue(prefab);
+            _frontPrefabsQueue.Enqueue(prefab);
+            _frontPrefabSizes.Add(prefab.name, Utilities.GetObjectXSize(prefab));
         }
 
     }
@@ -50,21 +48,37 @@ public class PlatformGenerator : MonoBehaviour
 
     void Update()
     {
-        var first_prefab = PrefabsQueue.First();
-        var first_prefab_x_size = Utilities.GetObjectXSize(first_prefab);
-        if (HasCameraPastPrefab(PrefabsQueue.First(), first_prefab_x_size, CameraLeftTransform.position.x))
+        var firstPrefab = _prefabsQueue.First();
+        var firstPrefabXSize = _prefabSizes[firstPrefab.name];
+        if (HasCameraPastPrefab(_prefabsQueue.First(), firstPrefabXSize, CameraLeftTransform.position.x))
         {
-            first_prefab = PrefabsQueue.Dequeue();
+            firstPrefab = _prefabsQueue.Dequeue();
 
-            var furthest_prefab = PrefabsQueue.Last();
-            var furthest_prefab_x_size = Utilities.GetObjectXSize(furthest_prefab);
-            var furthest_prefab_x_position = furthest_prefab.transform.position.x;
+            var furthestPrefab = _prefabsQueue.Last();
+            var furthestPrefabXSize = _prefabSizes[furthestPrefab.name];
+            var furthestPrefabXPosition = furthestPrefab.transform.position.x;
 
-            PutThePastPrefabToTheFurthestPosition(first_prefab, furthest_prefab_x_position,
-                furthest_prefab_x_size
-                , first_prefab_x_size);
-            PrefabsQueue.Enqueue(first_prefab);
-        }           
+            PutThePastPrefabToTheFurthestPosition(firstPrefab, furthestPrefabXPosition,
+                furthestPrefabXSize
+                , firstPrefabXSize);
+            _prefabsQueue.Enqueue(firstPrefab);
+        }     
+        
+        firstPrefab = _frontPrefabsQueue.First();
+        firstPrefabXSize = _frontPrefabSizes[firstPrefab.name];
+        if (HasCameraPastPrefab(_frontPrefabsQueue.First(), firstPrefabXSize, CameraLeftTransform.position.x))
+        {
+            firstPrefab = _frontPrefabsQueue.Dequeue();
+
+            var furthestPrefab = _frontPrefabsQueue.Last();
+            var furthestPrefabXSize = _frontPrefabSizes[furthestPrefab.name];
+            var furthestPrefabXPosition = furthestPrefab.transform.position.x;
+
+            PutThePastPrefabToTheFurthestPosition(firstPrefab, furthestPrefabXPosition,
+                furthestPrefabXSize
+                , firstPrefabXSize);
+            _frontPrefabsQueue.Enqueue(firstPrefab);
+        }    
     }
 
     private bool HasCameraPastPrefab(GameObject gameObject, float prefab_x_size, float camera_left_x_position)
