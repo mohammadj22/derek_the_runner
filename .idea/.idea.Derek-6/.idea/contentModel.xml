@@ -17,7 +17,10 @@
           <e p="JumpButtonScript.cs" t="Include" />
           <e p="MovingBackground.cs" t="Include" />
           <e p="MovingPlatforms.cs" t="Include" />
+          <e p="MovingPlatformsFarBack.cs" t="Include" />
           <e p="MovingPlatformsFront.cs" t="Include" />
+          <e p="MovingPlatformsNearBack.cs" t="Include" />
+          <e p="MovingPlatformsSun.cs" t="Include" />
           <e p="PlatformGenerator.cs" t="Include" />
           <e p="PlatformScript.cs" t="Include" />
           <e p="Player.cs" t="Include" />

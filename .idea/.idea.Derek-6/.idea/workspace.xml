@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="894eb152-75bd-4105-8a9d-8160fe65150e" name="Default Changelist" comment="" />
+    <list default="true" id="894eb152-75bd-4105-8a9d-8160fe65150e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Derek-6/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Derek-6/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Derek-6/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Derek-6/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MovingBackground.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MovingBackground.cs" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,7 +19,7 @@
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/MovingPlatforms.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="208">
-              <caret line="10" column="5" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+              <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="126" />
               <folding>
                 <marker date="1556888875000" expanded="false" signature="6:78" ph="..." />
                 <marker date="1556888875000" expanded="true" signature="124:416" ph="{...}" />
@@ -26,31 +31,60 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/MovingPlatformsFront.cs">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/MovingPlatformsNearBack.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="16" column="84" selection-start-line="16" selection-start-column="84" selection-end-line="16" selection-end-column="84" />
+            <state relative-caret-position="260">
+              <caret line="16" selection-start-line="16" selection-end-line="16" selection-end-column="131" />
               <folding>
-                <marker date="1562935244584" expanded="false" signature="6:78" ph="..." />
-                <marker date="1562935244584" expanded="true" signature="129:427" ph="{...}" />
-                <marker date="1562935244584" expanded="true" signature="202:223" ph="{...}" />
-                <marker date="1562935244584" expanded="true" signature="281:425" ph="{...}" />
+                <marker date="1563520678074" expanded="false" signature="6:101" ph="..." />
+                <marker date="1563520678074" expanded="true" signature="155:579" ph="{...}" />
+                <marker date="1563520678074" expanded="true" signature="227:248" ph="{...}" />
+                <marker date="1563520678074" expanded="true" signature="306:577" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/GasScript.cs">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/MovingPlatformsSun.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="25" selection-start-line="25" selection-end-line="25" />
+            <state relative-caret-position="208">
+              <caret line="15" column="64" selection-start-line="15" selection-start-column="64" selection-end-line="15" selection-end-column="86" />
               <folding>
-                <marker date="1562936963376" expanded="false" signature="6:78" ph="..." />
-                <marker date="1562936963376" expanded="true" signature="118:580" ph="{...}" />
-                <marker date="1562936963376" expanded="true" signature="296:406" ph="{...}" />
-                <marker date="1562936963376" expanded="true" signature="464:578" ph="{...}" />
-                <marker date="1562936963376" expanded="true" signature="514:572" ph="{...}" />
+                <marker date="1563520942462" expanded="false" signature="6:78" ph="..." />
+                <marker date="1563520942462" expanded="true" signature="127:425" ph="{...}" />
+                <marker date="1563520942462" expanded="true" signature="199:220" ph="{...}" />
+                <marker date="1563520942462" expanded="true" signature="278:423" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/MovingPlatformsFarBack.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="280">
+              <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
+              <folding>
+                <marker date="1563520678062" expanded="false" signature="6:78" ph="..." />
+                <marker date="1563520678062" expanded="true" signature="131:554" ph="{...}" />
+                <marker date="1563520678062" expanded="true" signature="203:224" ph="{...}" />
+                <marker date="1563520678062" expanded="true" signature="282:552" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/MovingPlatformsFront.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="224">
+              <caret line="16" selection-start-line="16" selection-end-line="17" />
+              <folding>
+                <marker date="1562935244584" expanded="false" signature="6:78" ph="..." />
+                <marker date="1562935244584" expanded="true" signature="129:427" ph="{...}" />
+                <marker date="1562935244584" expanded="true" signature="202:223" ph="{...}" />
+                <marker date="1562935244584" expanded="true" signature="281:425" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -70,11 +104,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/World.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="77">
-              <caret line="87" column="21" lean-forward="true" selection-start-line="87" selection-start-column="21" selection-end-line="87" selection-end-column="21" />
+            <state relative-caret-position="1328">
+              <caret line="87" column="21" selection-start-line="87" selection-start-column="21" selection-end-line="87" selection-end-column="21" />
               <folding>
                 <marker date="1562938615656" expanded="false" signature="6:138" ph="..." />
                 <marker date="1562938615656" expanded="true" signature="175:2105" ph="{...}" />
@@ -92,11 +126,33 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/578B5B67-7E30-45F5-8675-3155BC1864CB/f0/1368a46e/Object.cs">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/MovingBackground.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4000">
-              <caret line="257" column="5" selection-start-line="257" selection-start-column="5" selection-end-line="257" selection-end-column="5" />
+            <state relative-caret-position="208">
+              <caret line="15" column="85" selection-start-line="15" selection-start-column="85" selection-end-line="15" selection-end-column="85" />
+              <folding>
+                <marker date="1563520942476" expanded="false" signature="6:78" ph="..." />
+                <marker date="1563520942476" expanded="true" signature="125:423" ph="{...}" />
+                <marker date="1563520942476" expanded="true" signature="197:218" ph="{...}" />
+                <marker date="1563520942476" expanded="true" signature="276:421" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/GasScript.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="368">
+              <caret line="25" selection-start-line="25" selection-end-line="25" />
+              <folding>
+                <marker date="1562936963376" expanded="false" signature="6:78" ph="..." />
+                <marker date="1562936963376" expanded="true" signature="118:580" ph="{...}" />
+                <marker date="1562936963376" expanded="true" signature="296:406" ph="{...}" />
+                <marker date="1562936963376" expanded="true" signature="464:578" ph="{...}" />
+                <marker date="1562936963376" expanded="true" signature="514:572" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -104,7 +160,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Utilities.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
+            <state relative-caret-position="160">
               <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
               <folding>
                 <marker date="1556888875000" expanded="false" signature="6:92" ph="..." />
@@ -145,6 +201,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/World.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MovingPlatforms.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/JumpButtonScript.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MovingPlatformsNearBack.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerPhysics.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/578B5B67-7E30-45F5-8675-3155BC1864CB/f0/1368a46e/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player.cs" root0="FORCE_HIGHLIGHTING" />
@@ -157,6 +214,8 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FF246790-73D7-4D81-84F4-AD5E9CE5D368/77/fb147b57/Animator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SlideButtonScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GasScript.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MovingPlatformsSun.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MovingPlatformsFarBack.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemyScript.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -172,6 +231,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/MovingPlatformsFront.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GasScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MovingPlatformsFarBack.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MovingPlatformsNearBack.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MovingPlatformsSun.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MovingBackground.cs" />
       </list>
     </option>
   </component>
@@ -191,8 +254,8 @@
       <pane id="SolutionExplorer">
         <option name="show-all-files" value="false" />
       </pane>
-      <pane id="AssemblyExplorer" />
       <pane id="FileSystemExplorer" />
+      <pane id="AssemblyExplorer" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -243,11 +306,12 @@
       <workItem from="1558692529030" duration="11321000" />
       <workItem from="1559299483828" duration="1651000" />
       <workItem from="1562931857982" duration="6659000" />
+      <workItem from="1563519542492" duration="1400000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29403000" />
+    <option name="totallyTimeSpent" value="30803000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -260,8 +324,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.110341154" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11140725" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Capture Tool" order="3" />
@@ -350,18 +415,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/MovingBackground.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <marker date="1556888875000" expanded="false" signature="6:78" ph="..." />
-            <marker date="1556888875000" expanded="true" signature="125:406" ph="{...}" />
-            <marker date="1556888875000" expanded="true" signature="197:218" ph="{...}" />
-            <marker date="1556888875000" expanded="true" signature="276:404" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/EnemyScript.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
@@ -375,58 +428,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/578B5B67-7E30-45F5-8675-3155BC1864CB/f0/1368a46e/Object.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4000">
-          <caret line="257" column="5" selection-start-line="257" selection-start-column="5" selection-end-line="257" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/MovingPlatformsFront.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="16" column="84" selection-start-line="16" selection-start-column="84" selection-end-line="16" selection-end-column="84" />
-          <folding>
-            <marker date="1562935244584" expanded="false" signature="6:78" ph="..." />
-            <marker date="1562935244584" expanded="true" signature="129:427" ph="{...}" />
-            <marker date="1562935244584" expanded="true" signature="202:223" ph="{...}" />
-            <marker date="1562935244584" expanded="true" signature="281:425" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FF246790-73D7-4D81-84F4-AD5E9CE5D368/77/fb147b57/Animator.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="227">
           <caret line="974" column="24" selection-start-line="974" selection-start-column="24" selection-end-line="974" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Player.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <marker date="1556888875000" expanded="false" signature="6:78" ph="..." />
-            <marker date="1556888875000" expanded="true" signature="115:403" ph="{...}" />
-            <marker date="1556888875000" expanded="true" signature="218:281" ph="{...}" />
-            <marker date="1556888875000" expanded="true" signature="339:401" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Utilities.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
-          <folding>
-            <marker date="1556888875000" expanded="false" signature="6:92" ph="..." />
-            <marker date="1556888875000" expanded="true" signature="132:677" ph="{...}" />
-            <marker date="1556888875000" expanded="true" signature="197:673" ph="{...}" />
-            <marker date="1556888875000" expanded="true" signature="252:358" ph="{...}" />
-            <marker date="1556888875000" expanded="true" signature="386:631" ph="{...}" />
-            <marker date="1556888875000" expanded="true" signature="412:530" ph="{...}" />
-            <marker date="1556888875000" expanded="true" signature="570:621" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -499,22 +504,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/MovingPlatforms.cs">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/578B5B67-7E30-45F5-8675-3155BC1864CB/f0/1368a46e/Object.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="10" column="5" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+        <state relative-caret-position="4000">
+          <caret line="257" column="5" selection-start-line="257" selection-start-column="5" selection-end-line="257" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Utilities.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
           <folding>
-            <marker date="1556888875000" expanded="false" signature="6:78" ph="..." />
-            <marker date="1556888875000" expanded="true" signature="124:416" ph="{...}" />
-            <marker date="1556888875000" expanded="true" signature="196:217" ph="{...}" />
-            <marker date="1556888875000" expanded="true" signature="275:414" ph="{...}" />
+            <marker date="1556888875000" expanded="false" signature="6:92" ph="..." />
+            <marker date="1556888875000" expanded="true" signature="132:677" ph="{...}" />
+            <marker date="1556888875000" expanded="true" signature="197:673" ph="{...}" />
+            <marker date="1556888875000" expanded="true" signature="252:358" ph="{...}" />
+            <marker date="1556888875000" expanded="true" signature="386:631" ph="{...}" />
+            <marker date="1556888875000" expanded="true" signature="412:530" ph="{...}" />
+            <marker date="1556888875000" expanded="true" signature="570:621" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/MovingPlatformsFarBack.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
+          <folding>
+            <marker date="1563520678062" expanded="false" signature="6:78" ph="..." />
+            <marker date="1563520678062" expanded="true" signature="131:554" ph="{...}" />
+            <marker date="1563520678062" expanded="true" signature="203:224" ph="{...}" />
+            <marker date="1563520678062" expanded="true" signature="282:552" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/MovingPlatformsFront.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="16" selection-start-line="16" selection-end-line="17" />
+          <folding>
+            <marker date="1562935244584" expanded="false" signature="6:78" ph="..." />
+            <marker date="1562935244584" expanded="true" signature="129:427" ph="{...}" />
+            <marker date="1562935244584" expanded="true" signature="202:223" ph="{...}" />
+            <marker date="1562935244584" expanded="true" signature="281:425" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/GasScript.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
+        <state relative-caret-position="368">
           <caret line="25" selection-start-line="25" selection-end-line="25" />
           <folding>
             <marker date="1562936963376" expanded="false" signature="6:78" ph="..." />
@@ -526,10 +567,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Player.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <marker date="1556888875000" expanded="false" signature="6:78" ph="..." />
+            <marker date="1556888875000" expanded="true" signature="115:403" ph="{...}" />
+            <marker date="1556888875000" expanded="true" signature="218:281" ph="{...}" />
+            <marker date="1556888875000" expanded="true" signature="339:401" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/World.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77">
-          <caret line="87" column="21" lean-forward="true" selection-start-line="87" selection-start-column="21" selection-end-line="87" selection-end-column="21" />
+        <state relative-caret-position="1328">
+          <caret line="87" column="21" selection-start-line="87" selection-start-column="21" selection-end-line="87" selection-end-column="21" />
           <folding>
             <marker date="1562938615656" expanded="false" signature="6:138" ph="..." />
             <marker date="1562938615656" expanded="true" signature="175:2105" ph="{...}" />
@@ -542,6 +595,58 @@
             <marker date="1562938615656" expanded="true" signature="1675:1800" ph="{...}" />
             <marker date="1562938615656" expanded="true" signature="1834:1947" ph="{...}" />
             <marker date="1562938615656" expanded="true" signature="1971:2103" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/MovingPlatforms.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="126" />
+          <folding>
+            <marker date="1556888875000" expanded="false" signature="6:78" ph="..." />
+            <marker date="1556888875000" expanded="true" signature="124:416" ph="{...}" />
+            <marker date="1556888875000" expanded="true" signature="196:217" ph="{...}" />
+            <marker date="1556888875000" expanded="true" signature="275:414" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/MovingPlatformsNearBack.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="16" selection-start-line="16" selection-end-line="16" selection-end-column="131" />
+          <folding>
+            <marker date="1563520678074" expanded="false" signature="6:101" ph="..." />
+            <marker date="1563520678074" expanded="true" signature="155:579" ph="{...}" />
+            <marker date="1563520678074" expanded="true" signature="227:248" ph="{...}" />
+            <marker date="1563520678074" expanded="true" signature="306:577" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/MovingPlatformsSun.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="15" column="64" selection-start-line="15" selection-start-column="64" selection-end-line="15" selection-end-column="86" />
+          <folding>
+            <marker date="1563520942462" expanded="false" signature="6:78" ph="..." />
+            <marker date="1563520942462" expanded="true" signature="127:425" ph="{...}" />
+            <marker date="1563520942462" expanded="true" signature="199:220" ph="{...}" />
+            <marker date="1563520942462" expanded="true" signature="278:423" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/MovingBackground.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="15" column="85" selection-start-line="15" selection-start-column="85" selection-end-line="15" selection-end-column="85" />
+          <folding>
+            <marker date="1563520942476" expanded="false" signature="6:78" ph="..." />
+            <marker date="1563520942476" expanded="true" signature="125:423" ph="{...}" />
+            <marker date="1563520942476" expanded="true" signature="197:218" ph="{...}" />
+            <marker date="1563520942476" expanded="true" signature="276:421" ph="{...}" />
           </folding>
         </state>
       </provider>
